@@ -1,0 +1,37 @@
+
+/**  Creating a separate column for Times_Viewed and handling count by code will drastically reduce database scaling & performance to count query **/
+
+SELECT TOP 20 (Subscriber_Id, Content_Viewed_URI, Times_Viewed) 
+FROM Subscriber.Log 
+GROUP BY Subscriber_Id, Content_Viewed_URI
+ORDER BY Times_Viewed DESC
+
+
+SELECT (Subscriber_Id, Content_Viewed_URI, Times_Viewed) 
+FROM Subscriber.Log 
+GROUP BY Subscriber_Id, Content_Viewed_URI
+ORDER BY Times_Viewed DESC
+LIMIT 20
+
+/** Incase you want to pull Subscriber name or email from another table **/
+
+SELECT (SI.Subscriber_Name, SL.Content_Viewed_URI, SL.Times_Viewed) 
+FROM Subscriber S
+JOIN Subscriber.Log SL ON S.Subscriber_Id = SL.Subscriber_Id
+JOIN Subscriber.Info SI ON S.Subscriber_Id = SI.Id
+GROUP BY SI.Subscriber_Name, SL.Content_Viewed_URI
+ORDER BY SL.Times_Viewed DESC
+LIMIT 20
+
+
+/** Possible performance and scaling issues with this query **/
+/** I Chose to Use Limit instead of top 20, I also fear that this Count Query will be affected by the limitting attribute **/
+
+ 
+SELECT (SI.Subscriber_Name, SL.Content_Viewed_URI, COUNT(DISTINCT SL.Content_Viewed_URI) AS TimesViewed) 
+FROM Subscriber S
+JOIN Subscriber.Log SL ON S.Subscriber_Id = SL.Subscriber_Id
+JOIN Subscriber.Info SI ON S.Subscriber_Id = SI.Id
+GROUP BY SI.Subscriber_Name, SL.Content_Viewed_URI
+ORDER BY TimesViewed DESC
+LIMIT 20 
