@@ -14,7 +14,7 @@ public class Reference_Subscription_Details implements Serializable{
 	private static final long serialVersionUID = -8099520355484020701L;
 
 	@Id
-	private long id;
+	private int id;
 	
 	@Id
 	@Column( name = "Subscription_Tier" ) 
