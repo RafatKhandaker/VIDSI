@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="VIDSI-App">
+		<class>com.lifion.app.Check_Data</class>
+		<class>com.lifion.app.Check_DataPK</class>
+		<class>com.lifion.app.Credit_Data</class>
+		<class>com.lifion.app.Credit_DataPK</class>
+		<class>com.lifion.app.Payment_Info</class>
+		<class>com.lifion.app.Payment_InfoPK</class>
+		<class>com.lifion.app.Reference_Content_Limitation</class>
+		<class>com.lifion.app.Reference_Subscription_Detail</class>
+		<class>com.lifion.app.Reference_Subscription_DetailPK</class>
+		<class>com.lifion.app.Reference_Subscription_Type</class>
+		<class>com.lifion.app.Subscriber</class>
+		<class>com.lifion.app.Subscriber_Info</class>
+		<class>com.lifion.app.Subscriber_Log</class>
+		<class>com.lifion.app.Subscriber_LogPK</class>
+	</persistence-unit>
+</persistence>
