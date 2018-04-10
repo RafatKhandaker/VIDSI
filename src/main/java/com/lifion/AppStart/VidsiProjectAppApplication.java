@@ -1,4 +1,4 @@
-package com.lifion.app;
+package com.lifion.AppStart;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

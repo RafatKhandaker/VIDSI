@@ -1,4 +1,4 @@
-package com.lifion.app;
+package com.lifion.Data;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -14,6 +14,7 @@ public class Reference_Subscription_DetailPK implements Serializable {
 
 	private int id;
 
+	@Column(insertable=false, updatable=false)
 	private int subscription_Tier;
 
 	@Column(insertable=false, updatable=false)

@@ -1,4 +1,4 @@
-package com.lifion.app;
+package com.lifion.Data;
 
 import java.io.Serializable;
 import javax.persistence.*;
